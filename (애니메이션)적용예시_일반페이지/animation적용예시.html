@@ -1,0 +1,276 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <style>
+        #header{width:100%; height: 150px; background-color:#b4cccf}
+        #header h1.logo{
+            position: absolute; 
+            left:10%; 
+            top:30px;
+            width:120px; 
+            height: 80px; 
+            background-color:yellow;
+            
+            opacity: 0;
+            transition: all 2s
+        }
+        #header.active h1.logo{
+            opacity: 1
+        }
+        /*slick slide 애니메이션 추가 예시 */
+        #main_slide{width:100%; overflow: hidden;}
+        #main_slide .box1{width: 100%; min-width: 1200px; background-color:#dc9cbc; height: 500px; }
+        #main_slide .box2{width: 100%; min-width: 1200px; background-color:beige; height: 500px; }
+        #main_slide .box3{width: 100%; min-width: 1200px; background-color:cornflowerblue; height: 500px; }
+        #main_slide .box .inner{width:1000px; margin:0 auto; height: 500px;}
+        #main_slide .box .ani1{
+            width:200px; 
+            height: 300px; 
+            background-color: darkblue; 
+            margin-top:70px; 
+            margin-left: 150px; 
+            float: left; 
+            color:#fff;
+            
+            transform: translateX(-500px);
+            opacity: 0;
+            transition: all 1s;
+            
+        }
+        #main_slide .slick-active .ani1{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+        #main_slide .box .ani2{
+            width:400px; 
+            height: 200px; 
+            background-color:darkblue; 
+            float: right; 
+            margin-top:100px; 
+            float: right; 
+            color:#fff;
+            
+            transform: translateY(500px);
+            opacity: 0;
+            transition: all 1s;
+        }
+         #main_slide .slick-active .ani2{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        
+        /*본문 시작 */
+        #container{width:100%;}
+        
+        /*cont1 시작 */
+        #container .cont1{width:100%; background-color: azure; overflow: hidden;}
+        #container .cont1 .inner{width:1200px; margin:0 auto; text-align: center; padding:100px 0}
+        #container .cont1 ul{display: inline-block;}
+        #container .cont1 ul:after{content:''; display: block; clear: both}
+        #container .cont1 ul li{
+            width:200px; 
+            height: 200px; 
+            background-color: bisque; 
+            float: left; 
+            margin:25px; 
+            border:1px solid #ccc;
+            
+            transform: translateY(150px); /*최초 위치값을 아래로 내림 */
+            transition: all 1s; /*1초동안 움직이도록 */
+            opacity: 0; /*처음엔 보이지 않게 */
+        }
+        #container .cont1.active ul li{
+            transform: translateY(0); /*완성 위치로 오도록 */
+            opacity:1; /* 다시 나타나도록 */
+        }
+        #container .cont1.active ul li:nth-child(1){
+            transition-delay: 0s; /*박스 4개가 순서대로 나타나도록 지연시간 설정 */
+        }
+        #container .cont1.active ul li:nth-child(2){
+            transition-delay: 0.3s; /*박스 4개가 순서대로 나타나도록 지연시간 설정 */
+        }
+        #container .cont1.active ul li:nth-child(3){
+            transition-delay: 0.6s; /*박스 4개가 순서대로 나타나도록 지연시간 설정 */
+        }
+        #container .cont1.active ul li:nth-child(4){
+            transition-delay: 0.9s; /*박스 4개가 순서대로 나타나도록 지연시간 설정 */
+        }
+        
+        /*cont2 시작 */
+        #container .cont2{width:100%; text-align: center; padding:100px 0; overflow: hidden;}
+        #container .cont2 .box{
+            width:300px; 
+            height: 300px; 
+            display: inline-block; 
+            margin:0 50px; 
+            border: 1px solid #ccc; 
+            background-color: coral;
+            
+            transform: translateY(300px);
+            transition: all 1s;
+            opacity: 0;
+        
+        }
+        #container .cont2.active .box{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        
+        #container .cont2 .box1{
+            transition-delay: 0s;
+        }
+        #container .cont2 .box2{
+            transition-delay: 0.3s;
+        }
+        #container .cont2 .box3{
+            transition-delay: 0.6s;
+        }
+        
+        /*cont3 시작 */
+        #container .cont3{width:100%; padding:100px 0; overflow: hidden; text-align: center}
+        #container .cont3 .box{
+            display: inline-block;
+            width:1200px; 
+            height: 300px; 
+            background-color: cornflowerblue;
+            
+            transform: translateX(200%);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        #container .cont3.active .box{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        /*cont4 시작 */
+        #container .cont4{width:100%; overflow: hidden;}
+        #container .cont4 ul{ text-align: center;}
+        #container .cont4 ul:after{content:'';display: block;  clear: both;}
+        #container .cont4 ul li{
+            display: inline-block;
+            width:250px; 
+            height: 400px;
+            border: 1px solid #ccc;
+            margin:50px;
+            
+            transform: translateY(300px);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+        #container .cont4.active ul li{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        #footer{width:100$; height: 200px; background-color:azure }
+        
+    </style>
+    
+</head>
+<body>
+  <header id="header" >
+      <h1 class="logo"></h1>
+  </header>
+  <div id="main_slide">
+      <div class="box box1">
+         <div class="inner">
+             inner
+              <div class="ani1">animation_box</div>
+              <div class="ani2">animation_box</div>
+         </div>
+      </div>
+      <div class="box box2">
+         <div class="inner">
+              inner
+              <div class="ani1">animation_box</div>
+              <div class="ani2">animation_box</div>
+          </div>
+      </div>
+      <div class="box box3">
+         <div class="inner">
+              inner
+              <div class="ani1">animation_box</div>
+              <div class="ani2">animation_box</div>
+          </div>
+      </div>
+  </div>
+  <div id="container">
+      <div class="cont1">
+         <div class="inner">
+          <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+        </div>          
+      </div>
+      <div class="cont2">
+          <div class="box box1"></div>
+          <div class="box box2"></div>
+          <div class="box box3"></div>
+      </div>
+      <div class="cont3">
+          <div class="box"></div>
+      </div>
+      <div class="cont4">
+          <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+      </div>
+  </div>
+  <footer id="footer" ></footer>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script>
+    $(function(){
+        $('#main_slide').slick({
+				slide: 'div',
+				infinite : true, 
+				slidesToShow : 1,	
+				slidesToScroll : 1,	
+				speed : 100,
+				arrows : true, 
+				autoplay : true,
+				autoplaySpeed : 5000, 
+                pauseOnFocus: false, 
+                pauseOnHover: false,
+				prevArrow : "<button type='button' class='slick-prev'>Previous</button>",
+				nextArrow : "<button type='button' class='slick-next'>Next</button>",
+        });
+        setTimeout(function(){
+            $("#header").addClass("active");
+            
+        },300);
+        
+        $(window).scroll(function(){
+            target=$(window).scrollTop();
+            
+            if(target<$("#container .cont2").offset().top-500){
+               $("#container .cont1").addClass("active");
+            }
+            else if(target<$("#container .cont3").offset().top-300){
+               $("#container .cont2").addClass("active");
+            }
+            else if(target<$("#container .cont4").offset().top-500){
+               $("#container .cont3").addClass("active");
+            }
+            else {
+                 $("#container .cont4").addClass("active");
+            }
+           
+        });
+ 
+    });
+</script>
+</html>
