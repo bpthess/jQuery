@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    .top-banner{width:100%; height:200px; background:aqua;}
+    .container{width:100%; height:2000px; background: beige}
+    header{width:100%; height:150px; background: skyblue}
+    .sticky{position: sticky; width:100%; top:-10px; background: rgba(0,0,0,0.5); z-index:1000}
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+  $(function(){
+    $(window).scroll(function(){
+      var header_t= $("header").offset().top,     //offset = 헤더의 탑 좌표)(헤더의 top값)
+        scroll_t= $(window).scrollTop();   //화면의 스크롤 좌표(화면의 스크롤 top값)
+
+        if(scroll_t > header_t){
+          $("header").addClass("sticky");
+        }else{
+          $("header").removeClass("sticky");
+        }
+    })
+  })
+  </script>
+</head>
+
+<body>
+  <div class="top-banner">상단에 헤더 이벤트/공지 배너 들어갈 영역</div>
+  <header>헤더가 들어갈 영역</header>
+  <div class="container">본문영역</div>
+</body>
+
+</html>

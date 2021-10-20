@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클릭이벤트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button{width:150px; height: 50px;}
+        img{display: none}
+    </style>
+    <style>
+    </style>
+    <!--    <script src="js/jquery-3.6.0.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       $(function(){
+           $("button").click(function(){
+               $("img").show(2000,function(){
+                   $(this).attr("src","../images/cat03.png");
+               });
+           });
+       });
+    </script>
+</head>
+
+<body>
+  <button>click</button>
+  <img src="../images/cat01.png" alt="">
+</body>
+</html>

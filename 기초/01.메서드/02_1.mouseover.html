@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+ul li a{font-size:20px; color:#333; text-decoration:none;}
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+  $(document).ready(function(){
+
+  $("ul li a").mouseover(function(){
+    $(this).css({
+      fontsize:30,
+      color:"orange",
+      "text-decoration":"underline"
+    });
+});
+$("li a").mouseout(function(){
+  $(this).css({
+    font-size:20,
+    color:"#333",
+    textDecoration:"none"
+  })
+})
+  });
+  </script>
+</head>
+
+<body>
+<h1>우인아 너를 어떻게 해야겠니</h1>
+<ul>
+  <li><a href="#none">마우스오버</a></li>
+  <li><a href="#none">마우스오버</a></li>
+  <li><a href="#none">마우스오버</a></li>
+  <li><a href="#none">마우스오버</a></li>
+</ul>
+</body>
+
+</html>

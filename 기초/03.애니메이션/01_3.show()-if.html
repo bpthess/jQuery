@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      width: 80px;
+      height: 40px;
+    }
+
+    img {
+      display: none;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+    $(document).ready(function() {
+
+      // if(조건식1){
+      //   조건식이 참인 경우 실행할 행동
+      // }
+      // else if(조건식2){
+      //   조건식이 참이 아닌경우 실행할 행동
+      // }else{
+      //   조건식 1 과 2 에 해당하지 않는 경우
+      // }
+      $("button").click(function() {
+
+
+        if ($("img").css("display") == "none") {
+          $("img").show();
+        } else {
+          $("img").hide();
+        }
+      })
+    });
+  </script>
+</head>
+
+
+<body>
+  <button>click</button>
+  <img src="../images/cat01.png" alt="고양이1번" />
+</body>
+
+</html>

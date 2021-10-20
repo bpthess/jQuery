@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        ul.list li {
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            margin: 10px;
+            background-color:#e5e5e5;
+            position: relative;
+        }
+        ul.list li span{
+            position: absolute;
+            display: block;
+            transition: all 0.3s linear;
+        }
+        ul.list li span.line01{
+            top:0px;
+            left:0px;
+            width:0px;
+            height: 5px;
+            background-color: #c0daee;
+        }
+        ul.list li span.line02{
+            top:0px;
+            right:0px;
+            width:5px;
+            height:0px; 
+            background: -webkit-linear-gradient(rgba(192,218,238,1) 0%, rgba(168,89,191,1) 100%);
+            background: -o-linear-gradient(rgba(192,218,238,1) 0%, rgba(168,89,191,1) 100%);
+            background: linear-gradient(rgba(192,218,238,1) 0%, rgba(168,89,191,1) 100%);
+        }
+        ul.list li span.line03{
+            bottom:0px;
+            right:0px;
+            width:0px;
+            height:5px;
+            background-color: #a859bf;
+        }
+        ul.list li span.line04{
+            bottom:0px;
+            left:0px;
+            width:5px;
+            height: 0px;   
+            background: linear-gradient(180deg, rgba(192,218,238,1) 0%, rgba(168,89,191,1) 100%);
+        }
+        ul.list li:hover span.line01,
+        ul.list li:hover span.line03{width:250px}
+        
+        ul.list li:hover span.line02,
+        ul.list li:hover span.line04{height: 250px;}
+        
+    
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li>
+           
+            <span class="line01"></span>
+            <span class="line02"></span>
+            <span class="line03"></span>
+            <span class="line04"></span>
+        </li>
+        <li>
+            <span class="line01"></span>
+            <span class="line02"></span>
+            <span class="line03"></span>
+            <span class="line04"></span>
+        </li>
+        <li>
+            <span class="line01"></span>
+            <span class="line02"></span>
+            <span class="line03"></span>
+            <span class="line04"></span>
+        </li>
+    </ul>
+</body>
+
+</html>

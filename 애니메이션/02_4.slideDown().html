@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클릭이벤트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        dl{text-align: center}
+        dl dt{width:600px; height: 50px; background-color: antiquewhite}
+        dl dd{width:600px; height: 500px; background-color: aqua; display: none;}
+        
+        
+        
+    </style>
+    <style>
+    </style>
+    <!--    <script src="js/jquery-3.6.0.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>-->
+   
+    <script>
+       $(function(){
+            $("dt").click(function(){
+                $("dd").slideToggle();
+            });
+          
+       });
+    </script>
+</head>
+
+<body>
+  <dl>
+      <dt>클릭영역</dt>
+      <dd>슬라이드 영역</dd>
+  </dl>
+</body>
+</html>

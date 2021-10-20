@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클릭이벤트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            font-size: 40px;
+            color:#90b3c9
+        }
+
+    </style>
+   
+
+   
+</head>
+
+<body>
+ <h1>김수안</h1>     
+      
+      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $("h1").click(function(){
+            
+          //  $(this).css("font-size","150px"); 
+            
+            $(this).animate({
+                "font-size":"150px",
+                color:"#eb79d6"
+            });
+        });
+        
+    </script>
+</body>
+</html>

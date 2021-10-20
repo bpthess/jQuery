@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    .top-area {
+      background: yellow;
+      position: fixed;
+      width: 100%;
+      top: -140px;
+    }
+
+    .top-area .t-search {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .top-area .srh-txt {
+      width: 800px;
+      height: 50px;
+      background-color: skyblue;
+      vertical-align: top
+    }
+
+    .top-area .srh-btn {
+      width: 50px;
+      height: 50px;
+      background: azure;
+      vertical-align: middle;
+      margin-left: -6px;
+    }
+
+    .top-area button.open-btn {
+      position: absolute;
+      right: 0;
+      bottom: -40px;
+      width: 120px;
+      height: 40px;
+      background: coral;
+      color: #fff;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-area">
+    <div class="t-search">
+      <form>
+        <fieldset>
+          <input type="text" class="srh-txt">
+          <input type="button" class="srh-btn" value="검색">
+        </fieldset>
+      </form>
+      <button class="open-btn">open</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+    $(function() {
+      $(".open-btn").click(function() {
+        $(".top-area").toggleClass("on"); //toggleClass(클래스명)- 주어가 클래스명을 가지고 있으면 빼고 없으면 넣어준다.
+
+        if ($(".top-area").hasClass("on")) { //hasClass(클래스명) - 주어가 해당 클래스명을 갖고 있으면 참이고 없으면 거짓이다.
+          $(".top-area").animate({
+            "top": 0
+          });
+        } else {
+          $(".top-area").animate({
+            top: "-140px"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

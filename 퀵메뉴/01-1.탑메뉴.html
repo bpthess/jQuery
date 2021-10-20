@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    .top-btn{width:100px; height:100px;
+      display:none;
+      }
+      .top-btn a{display:block; width:100px; color:#000; line-height:100px;
+        background: rgba(255,255,0,0.5);
+         border-radius: 50%;
+         position: fixed; right:50px; bottom:50px;
+       text-align: center;}
+
+    .cont1{width:100%; background: aqua}
+    .cont2{width:100%; background: beige}
+    .cont3{width:100%; background: skyblue}
+    .cont4{width:100%; background: green}
+    .cont5{width:100%; background: red}
+
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+    $(function() {
+      $(".cont").css("height",$(window).height());
+      $(window).scroll(function(){
+        if($(this).scrollTop()>200){
+          $(".top-btn").fadeIn("fast");
+        }else{
+          $(".top-btn").fadeOut("fast");
+        }
+      });
+      $(".top-btn").click(function(){
+        $("body,html").animate({
+          scrollTop:0
+        },200)
+      })
+    });
+  </script>
+</head>
+
+<body>
+<div class="top-btn">
+  <a href="#none">TOP</a>
+  </div>
+
+  <div class="cont cont1" id="section1"></div>
+  <div class="cont cont2" id="section2"></div>
+  <div class="cont cont3" id="section3"></div>
+  <div class="cont cont4" id="section4"></div>
+  <div class="cont cont5" id="section5"></div>
+</body>
+
+</html>

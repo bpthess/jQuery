@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+dl{text-align: center;}
+dl dt{width:500px; height:100px; background: #ccc;}
+dl dd{width:500px; height:300px; background: pink; display:none;}
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+
+
+</script>
+  <script>
+$(function(){
+  $("dt").click(function(){
+    $("dd").slideToggle();   //if문을 사용하지 않고 스위치 행위를 반복할 수 있음
+  })
+});
+  </script>
+</head>
+
+
+<body>
+<dl>
+  <dt>클릭영역</dt>
+  <dd>슬라이드 영역</dd>
+</dl>
+</body>
+
+</html>

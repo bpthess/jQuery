@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    button{width:120px; height:50px;}
+    .img-box{display:none;}
+  </style>
+</head>
+
+<body>
+<button>fadeln</button>
+<button>fadeOut</button>
+<div class="img-box">
+  <img src="../images/cat06.png" alt="고양이6번" />
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function(){
+  $("button:eq(0)").click(function(){
+    $(".img-box:not(:animated)").fadeIn(2000);
+  });
+  $("button:eq(1)").click(function(){
+    $(".img-box:not(:animated)").fadeOut(2000);
+  })
+})
+</script>
+</body>
+</html>

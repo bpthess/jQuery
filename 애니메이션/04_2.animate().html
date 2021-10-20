@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        .img-box{width:600px; height: 400px; overflow: hidden} 
+        .img-box .img-train{width:1200px; height: 400px;}
+        
+    </style>
+   
+
+   
+</head>
+
+<body>
+    <div class="img-box">
+        <div class="img-train">
+            <img src="../images/cat04.png" alt="" class="cat1"><img src="../images/cat05.png" alt="" class="cat2">
+        </div>
+    </div>
+      
+      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+       $(".cat1").click(function(){
+           $(".img-train").animate({
+               marginLeft:"-600px"
+           });
+       });
+        $(".cat2").click(function(){
+            $(".img-train").animate({
+                "margin-left":0
+            })
+        });
+        
+    </script>
+</body>
+</html>

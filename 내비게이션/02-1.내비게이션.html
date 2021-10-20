@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    header{width:100%; height:190px; position: absolute; overflow: hidden;}
+    header:after{content: ''; display:block; height:200px; width:100%; background: pink}
+    .header-top{width:100%; height:150px; background:pink}
+    .container{width:100%; height:500px; background: azure}
+    .header-bottom{width:100%; background:beige;}
+    #gnb{width:1200px; margin:0 auto; height:40px;}
+    #gnb:after{content: ''; display:block; clear:both;}
+    #gnb>li{float:left; width:200px; position: relative;}
+    #gnb>li>a{font-size:18px;
+      color:#000; display:block;
+       height:40px; line-height: 40px; text-align: center;}
+    #gnb>li>ul.sub{
+
+       background: pink;
+       width:100%;
+       height:200px; padding:20px 0;
+     box-sizing:border-box;
+   text-align: center;}
+   #gnb>li.on>ul.sub{display:block;}
+   #gnb>li.on>ul.sub li{}
+   #gnb>li.on>ul.sub li a{display:block; font-size:15px; padding:5px 0; color:#666;}
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+  $(function(){
+    var $menu = $("#gnb>li")
+    $menu.on("mouseenter",function(){
+      $("header").stop().animate({
+        height:390
+      }, "fast")
+    })
+    $menu.on("mouseleave",function(){
+      $("header").stop().animate({
+        height:190
+      })
+    })
+  })
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="header-top"></div>
+    <div class="header-bottom">
+      <nav>
+        <ul id="gnb">
+          <li>
+            <a href="#none">회사소개</a>
+            <ul class="sub">
+              <li><a href="#none">회사소개</a></li>
+              <li><a href="#none">ceo인사말</a></li>
+              <li><a href="#none">조직도</a></li>
+              <li><a href="#none">연혁</a></li>
+              <li><a href="#none">오시는길</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none">대메뉴</a>
+            <ul class="sub">
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none">대메뉴</a>
+            <ul class="sub">
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none">대메뉴</a>
+            <ul class="sub">
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none">대메뉴</a>
+            <ul class="sub">
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#none">대메뉴</a>
+            <ul class="sub">
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+              <li><a href="#none">서브메뉴</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container"></div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+button{width:150px; height:50px;}
+h1{font-size:100px; display:none;}
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+  $(document).ready(function(){
+    // $("button").click(function(){});
+  //   $("button").on("click",function(){
+  //     $("img").show();
+  //
+  //   });
+  //   $("button.hide").on("click",function(){
+  //     $("img").hide();
+  //     });
+  // });
+
+  $("button:eq(0)").on("click",function(){
+    $(".img-box").show();
+
+  });
+  $("button:eq(1)").click(function(){
+    $(".img-box").hide();
+  });
+  });
+  </script>
+</head>
+
+
+<body>
+<button>click</button>
+<button class="hide">click</button>
+<div class="img-box">
+<img src="../images/cat05.png" alt="고양이5번" />
+</div>
+<h1>이태용</h1>
+</body>
+
+</html>

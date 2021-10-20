@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Responsive - fullPage.js</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <!--
+<ul id="menu">
+	<li data-menuanchor="firstPage"><a href="#firstPage">First slide</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+</ul>
+-->
+
+
+
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <div id="main_slide">
+                <div class="box box1"> </div>
+                <div class="box box2"></div>
+                <div class="box box3"></div>
+            </div>
+            <header id="header">
+                <h1 class="logo"></h1>
+            </header>
+            <div class="cont_box">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="cont1">
+                <div class="inner">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <div class="cont2">
+                    <div class="box box1"></div>
+                    <div class="box box2"></div>
+                    <div class="box box3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="intro">
+                <div class="slide" id="slide1">
+                    <div class="cont3">
+                        <div class="box"></div>
+                    </div>
+                </div>
+
+                <div class="slide" id="slide2">
+
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section4"></div>
+        <div class="section fp-auto-height" id="section3">
+            <div id="footer" style="height:200px">푸터 영역 높이값 자유롭게 선언</div>
+        </div>
+
+    </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+        if ($(window).width() < 1024) {
+            $('#fullpage').removeAttr('id');
+        }
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', '3rdPage'],
+            sectionsColor: ['#c2e5f0', '#eff0c2', '#f2d4f1', 'skyblue', '#d2d0d2', '#333'],
+            navigation: true,
+            navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+
+            'afterLoad': function(index, nextIndex, direction) {
+                if (nextIndex == 1) {
+                    $(window).load(function() {
+                        $("#section0").addClass("on");
+                    });
+                } else if (nextIndex == 2) {
+                    $("#section1").addClass("on");
+                } else if (nextIndex == 3) {
+                    $("#section2").addClass("on");
+                } else if (nextIndex == 4) {
+                    $("#section3 #slide1").addClass("on");
+                } else if (nextIndex == 5) {
+
+                }
+            }
+        });
+    });
+</script>
+<script>
+    $(function() {
+        $('#main_slide').slick({
+            slide: 'div',
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 100,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            prevArrow: "<button type='button' class='slick-prev'>Previous</button>",
+            nextArrow: "<button type='button' class='slick-next'>Next</button>",
+        });
+
+    });
+</script></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    #main_slide {width:100%;}
+    #main_slide .slick-slide{float:left; width:100%; height:500px; background-repeat: no-repeat; background-position: center; background-size: cover; overflow: hidden;}
+    #main_slide .img1{background-image: url("images/zootopia01.png");}
+    #main_slide .img2{background-image: url("images/zootopia02.png");}
+    #main_slide .img3{background-image: url("images/zootopia03.png");}
+    #main_slide .img4{background-image: url("images/zootopia04.png");}
+    #main_slide .img5{background-image: url("images/zootopia05.png");}
+      .buttons button.on{background-color:red}
+
+  </style>
+
+</head>
+<body>
+  <section class="slide " id="main_slide">
+        <div class="slick-slide img1"><a href="http://www.naver.com" style="width:100%; height:100%; display: block"></a></div>
+        <div class="slick-slide img2"><a href="http://www.naver.com"></a></div>
+        <div class="slick-slide img3"><a href="http://www.naver.com"></a></div>
+        <div class="slick-slide img4"><a href="http://www.naver.com"></a></div>
+        <div class="slick-slide img5"><a href="http://www.naver.com"></a></div>
+  </section>
+  <div class="buttons">
+    <button class="stop_btn">Stop</button>
+    <button class="play_btn on">Play</button>
+  </div>
+
+</body>
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+
+
+      $("#main_slide").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow:3, // 한번에 보여지는 슬라이드 개수가 4개면 최소한 슬라이드 박스는 5개 필요
+        slidesToScroll: 1,
+        autoplay : true,
+        autoplaySpeed : 3000,
+        prevArrow : "<button type='button' class='slick-prev'>이전</button>",
+        nextArrow : "<button type='button' class='slick-next'>이후</button>",
+        pauseOnFocus: false,
+        pauseOnHover: false,
+//        fade:true,
+
+
+        responsive: [ // 반응형 웹 구현 옵션
+        {
+            breakpoint: 960, //화면 사이즈 960px
+            settings: {
+                //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                slidesToShow:3
+            }
+        },
+        {
+            breakpoint: 768, //화면 사이즈 768px
+            settings: {
+                //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                slidesToShow:2,
+                autoplay : false
+            }
+        }
+    ]
+      });
+    $(".stop_btn").click(function(){
+        $(".buttons button").removeClass("on");
+        $(this).addClass("on");
+        $('#main_slide').slick('slickPause');    // 정지
+    });
+
+    $(".play_btn").click(function(){
+        $(".buttons button").removeClass("on");
+        $(this).addClass("on");
+        $('#main_slide').slick('slickPlay');    // 시작
+    });
+
+    });
+</script>
+</html>

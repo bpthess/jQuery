@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    ul{list-style:none;}
+
+    /* dl{width:600px; margin:0 auto;} */
+    dl dt{width:50px; height:500px; background:#6694ab; cursor:pointer; float:left;}
+    dl dd{width:400px; height:500px; background: antiquewhite; float:left; overflow: hidden;}
+    /* dl dt:hover{background: red;} */
+    .bg-color{background:red;}
+    dt span{transform: rotate(90deg); display:block;}
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+   <script>
+     $(function(){
+       $("dl dd:not(:eq(0))").css("width","0px");
+       $("dl dt").click(function(){
+
+         if($("+dd",this).css("width")=="0px"){
+           $("dl dd").stop().animate({
+             width:0
+           },300) //"fast")
+
+           $("+dd",this).animate({
+             "width":"400px"
+           },100) //"slow")
+         }
+       });
+
+     })
+   </script>
+
+
+</head>
+<body>
+  <dl>
+    <dt><span>menu01</span></dt>
+    <dd>text</dd>
+    <dt><span>menu02</span></dt>
+    <dd>text</dd>
+    <dt><span>menu03</span></dt>
+    <dd>text</dd>
+    <dt><span>menu04</span></dt>
+    <dd>text</dd>
+  </dl>
+</body>
+</html>

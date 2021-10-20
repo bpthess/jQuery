@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    button{width:80px; height:40px;}
+.circle{
+  width:200px;
+   height:200px;
+   background:deeppink;
+    border-radius:50%;
+    text-align: center;
+    line-height:200px;
+    color:#fff;
+     font-size:40px;
+   position:absolute;
+ left:10px; top:100px;
+display:none;
+transition:left 1s;
+}
+.on{left:600px;}
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+  $(document).ready(function(){
+
+    $("button").click(function(){
+      $(".circle").show(function(){
+        $(".circle").addclass("on")
+      });
+    });
+
+  });
+  </script>
+</head>
+
+
+<body>
+<button>click</button>
+<div class="circle">이태용</div>
+</body>
+
+</html>

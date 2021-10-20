@@ -1,0 +1,44 @@
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .img-box{width:600px; height:400px; overflow: hidden;}
+      .img-box .img-train{width:1200px; height:400px;}
+    </style>
+  </head>
+
+  <body>
+    <div class="img-box">
+      <div class="img-train">
+        <img src="../images/cat05.png" alt="고양이5번" class="cat1"/><img src="../images/cat04.png" alt="고양이4번" class="cat2" />
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <script>
+    $(function(){
+      $(".cat1").click(function(){
+        $(".img-train").animate({
+          marginLeft:"-600px"
+        });
+      });
+      $(".cat2").click(function(){
+        $(".img-train").animate({
+          "margin-left":0
+        })
+      })
+    });
+    </script>
+  </body>
+
+  </html>

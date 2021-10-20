@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>노드 추가하기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .gallery {
+      width: 600px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul.list {
+      width: 600px;
+    }
+
+    ul.list li {
+      width: 25%;
+      float: left;
+    }
+
+    ul.list li a {
+      display: block;
+      line-height: 40px;
+      text-align: center;
+      decoration: none;
+      color: #666;
+    }
+
+    ul.list li:nth-child(odd) a {
+      background: skyblue;
+    }
+
+    ul.list li:nth-child(even) a {
+      background: aqua;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+  $(document).ready(function(){
+  $("ul.list li a").click(function(){
+    $(".img-box img").attr("src",$(this).attr("href")).attr("alt",$(this).text());
+
+    return false;
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div class="gallery">
+    <ul class="list">
+      <li><a href="../images/cat03.png">고양이3</a></li>
+      <li><a href="../images/cat02.png">고양이2</a></li>
+      <li><a href="../images/cat04.png">고양이4</a></li>
+      <li><a href="../images/cat05.png">고양이5</a></li>
+    </ul>
+  </div>
+  <div class="img-box">
+    <img src="../images/cat01.png" alt="고양이1" />
+  </div>
+</body>
+
+</html>

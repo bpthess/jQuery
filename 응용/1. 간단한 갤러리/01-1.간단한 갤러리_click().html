@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    ul{list-style:none;}
+
+    #gallery{width:1000px; margin:0 auto; border:1px solid #ccc; overflow:hidden; }
+    #gallery ul.list{width:400px; float:left; }
+    #gallery ul.list li{width:50%; height:200px; float:left; border-right:1px solid #ccc; box-sizing:border-box;}
+    /* #gallery ul.list li.line{border-bottom:1px solid #ccc;} */
+  #gallery ul.list li:nth-child(-n+4){border-bottom:1px solid #ccc; /*1번부터 4번까지*/}
+    #gallery ul.list li img{width:100%;}
+    #gallery .gallery-img{width:600px; height:600px; float:right;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+   <script>
+     $(function(){
+       var $list=$("#gallery ul.list li");
+       $list.click(function(){
+         $(".gallery-img img").attr({
+           "src":$(this).find("img").attr("src"),
+           alt:$(this).find("img").attr("alt")
+       });
+       })
+     })
+   </script>
+
+
+</head>
+<body>
+  <div id="gallery">
+    <ul class="list">
+      <li class="line"><a href="#none"><img src="../images/img1.png" alt="제품명1"></a></li>
+      <li class="line"><a href="#none"><img src="../images/img2.png" alt="제품명2"></a></li>
+      <li class="line"><a href="#none"><img src="../images/img3.png" alt="제품명3"></a></li>
+      <li class="line"><a href="#none"><img src="../images/img4.png" alt="제품명4"></a></li>
+      <li><a href="#none"><img src="../images/img5.png" alt="제품명5"></a></li>
+      <li><a href="#none"><img src="../images/img6.png" alt="제품명6"></a></li>
+    </ul>
+    <div class="gallery-img">
+      <img src="../images/img1.png" alt="제품명1" />
+    </div>
+  </div>
+</body>
+</html>
